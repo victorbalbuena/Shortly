@@ -30,7 +30,7 @@ export default function LinkResult({ link }) {
 
   return (
     <div className="bg-white p-5 font-poppins flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center rounded-lg my-5">
-      <h2 className="font-semibold text-lg w-full overflow-hidden text-ellipsis">
+      <h2 className="font-semibold text-base md:text-lg w-full overflow-hidden text-ellipsis">
         {/* eslint-disable-next-line react/prop-types */}
         {link.base}
       </h2>
@@ -40,18 +40,20 @@ export default function LinkResult({ link }) {
           {/* eslint-disable-next-line react/prop-types */}
           {link.shorter}
         </h3>
-        <button
-          className="text-white font-semibold font-lg bg-cyan-500 hover:bg-cyan-600 transition-colors duration-200 px-5 py-3 rounded-md w-full md:w-auto"
-          onClick={handleCopy}
-        >
-          <AiOutlineCopy />
-        </button>
-        <button
-          className="text-white font-semibold font-lg bg-red-500 hover:bg-red-700 transition-colors duration-200 px-5 py-3 rounded-md w-full md:w-auto"
-          onClick={() => removeLinkShorter(link)}
-        >
-          <FiTrash2 />
-        </button>
+        <div className="flex gap-2 justify-end items-end w-full md:w-auto">
+          <button
+            className="text-white flex justify-center font-semibold font-lg bg-cyan-500 hover:bg-cyan-600 transition-colors duration-200 px-5 py-3 rounded-md w-full md:w-auto"
+            onClick={handleCopy}
+          >
+            <AiOutlineCopy />
+          </button>
+          <button
+            className="text-white flex justify-center font-semibold font-lg bg-red-500 hover:bg-red-700 transition-colors duration-200 px-5 py-3 rounded-md w-full md:w-auto"
+            onClick={() => removeLinkShorter(link)}
+          >
+            <FiTrash2 />
+          </button>
+        </div>
       </div>
       <Toaster />
     </div>
